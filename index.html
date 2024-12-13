@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio de Compras</title>
+    <style>
+        /* Reset general */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+       
+       
+       
+       
+       
+        /* Estilos del cuerpo */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            height: 100vh;
+        }
+
+         /* Barra de búsqueda */
+         .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+            background-color: #2c3e50;
+            height: 100px;
+            width: 100%;
+            margin-left: 5px;
+        }
+
+        .search-input {
+            width: 95%;
+            padding: 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 40%;
+            margin-top: 0px;
+            margin-left:10px;
+            left:40px;
+        }
+
+        .search-button {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 100px;
+            transition: background-color 0.3s ease;
+            width: 20px;
+            margin-right: 140px;
+            
+        }
+
+        .search-button:hover {
+            background-color: #050505;
+            margin-left: 40px;
+            padding: auto;
+        }
+        
+        
+        /* Sidebar - Menú lateral */
+        .sidebar {
+            width: 260px;
+            height: 150vh;
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+
+/* Estilos del logo */
+        .sidebar-logo {
+         width: 80%;  /* Ajusta el tamaño del logo */
+         max-width: 120px;  /* Tamaño máximo */
+         margin: 0 auto 20px auto;  /* Centrado y separación inferior */
+         display: block;
+       }
+
+
+        /* Contenedor de los botones */
+        .form-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        /* Estilos de los botones */
+        .button {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+
+        }
+
+        .button:active {
+            transform: scale(0.98);
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+            justify-content: space-between;
+        }
+
+        /* Sección de productos */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            width: 100%;
+            flex-grow: 1;
+        }
+
+        .product-card {
+            margin-top: 0px;
+            width: 220px;
+            height: 400px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #7f8c8d;
+            margin-bottom: 15px;
+        }
+
+        .product-card button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            height: 20%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+        }
+
+        .product-card button:hover {
+            background-color: #2980b9;
+        }
+
+            /* Media Queries */
+             /* Media Queries */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                box-shadow: none;
+                margin-bottom: 20px;
+            }
+
+            .search-input {
+                width: 80%;
+            }
+
+            .products {
+                width: 100%;
+            }
+
+            .product-card {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 20px;
+            }
+
+            .search-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: 100%;
+                max-width: 220px;
+            }
+
+            .sidebar h2 {
+                font-size: 20px;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            .form-buttons {
+                gap: 10px;
+            }
+        }
+
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            max-height: 80vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .modal-content input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        /* Ajuste para eliminar el total en el carrito */
+        .total {
+            display: none;
+            font-size: 24px ;
+        }
+
+        
+
+
+
+
+
+
+        /* Estilo de los botones dentro de los formularios */
+        .modal-content button {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            width: 40%; /* Botones con un ancho del 40% */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-bottom: 15px;
+            height: 50px; /* Para igualar la altura de los botones */
+        }
+
+        .modal-content button:hover {
+            background-color: #2980b9;
+        }
+
+        .modal-content button:active {
+            transform: scale(0.98);
+        }
+
+        /* Centrado de los botones */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Ajustar espacio entre botones */
+        .modal-content button#clearCartButton {
+            width: 40%;  /* Ancho 40% */
+            margin: 20px 0;  /* Margen para separarlo de otros elementos */
+        }
+
+        /* Estilos para el loading */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+    </style>
+</head>
+<body>
+
+    
+
+    
+    
+    
+    <div class="loading" id="loading" style="display: none;">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Agregar logo en la barra lateral -->
+
+
+
+    <div class="sidebar">
+    <img src="C:\Users\aleja\OneDrive\Escritorio\registro\public\LOGO\sazon-latino.png" alt="Logo" class="sidebar-logo">
+
+        <h2>El Sazón Latino SPA</h2>
+        <div class="form-buttons">
+            <div class="button" onclick="showModal('delivery')">Delivery</div>
+            <div class="button" onclick="showModal('retira')">Retira Cliente</div>
+            <div class="button" id="viewCartButton" onclick="viewCart()">Ver Carrito de Compra (<span id="cartCount">0</span>)</div>
+            <div><h1><span id="totalAmount">Total: $0</span></h1></div>
+           <!-- <div class="button" onclick="window.open('file:///C:/Users/aleja/OneDrive/Escritorio/registro/public/en_construccion.html', '_blank')">Botón de Pago</div> -->
+           <a href="file:///C:/Users/aleja/OneDrive/Escritorio/registro/public/en_construccion.html" target="_blank" style="text-decoration: none;">
+            <div class="button">Botón de Pago</div>
+        </a>
+        
+
+            <div class="button" onclick="sendWhatsApp()">Enviar  orden a WhatsApp</div>
+
+
+        </div>
+    </div>
+    
+    
+    
+
+    <div class="products" id="productSection1">
+        
+        <!-- Barra de búsqueda -->
+    <div class="search-bar">
+        <input type="text" class="search-input" placeholder="Buscar productos..." id="searchInput" onkeyup="filterProducts()">
+    </div>    
+        <!--<button class="search-button">Buscar</button>--¡>
+
+    
+
+        
+        <-- Productos Aquí -->
+        <div class="product-card">
+            <img src="C:\Users\aleja\OneDrive\Escritorio\registro\public\Imagenes\perrocaliente.jpg" alt="Producto 1">
+            <h3>Perro Caliente Normal</h3>
+            <p>cebolla , repollo ,queso salsas variadas valor de 1500 pesos.</p>
+            <button onclick="addToCart('Perro Caliente Normal', 1500)">Agregar al carrito</button>
+        </div>
+
+
+        <div class="product-card">
+            <img src="C:\Users\aleja\OneDrive\Escritorio\registro\public\Imagenes\perrocaliente.jpg" alt="Producto 2">
+            <h3>Perro Caliente Especial</h3>
+            <p>cebolla ,papas a hilo, repollo ,queso pollo chirizo salsas variadas valor de 3000 pesos.</p>
+            <button onclick="addToCart('Perro Caliente Especial', 3000)">Agregar al carrito</button>
+        </div>
+
+        <div class="product-card">
+            <img src="C:\Users\aleja\OneDrive\Escritorio\registro\public\Imagenes\empanadas.jpg" alt="Producto 3">
+            <h3>Empanadas Normales</h3>
+            <p>carne , pollo ,queso chuleta variadas valor de 1500 pesos.</p>
+            <button onclick="addToCart('Empanadas Normales', 1500)">Agregar al carrito</button>
+        </div>
+
+        <div class="product-card">
+            <img src="C:\Users\aleja\OneDrive\Escritorio\registro\public\Imagenes\empanadas.jpg" alt="Producto 4">
+            <h3>Empanadas Mixta</h3>
+            <p>carne con queso , pollo con queso ,platano con queso chuleta  con queso , carne pollo,variadas valor de 2000 pesos.</p>
+            <button onclick="addToCart('Empanadas Mixta', 2000)">Agregar al carrito</button>
+        </div>
+       
+        <div class="product-card">
+            <img src="C:\Users\aleja\OneDrive\Escritorio\registro\public\Imagenes\papafritas.jpg" alt="Producto 5">
+            <h3>Papa Fritas pequeña</h3>
+            <p> la mejor de mercado por tan solo  2000 pesos. envanse pequeño</p>
+            <button onclick="addToCart('Papa Frita pequeña', 2000)">Agregar al carrito</button>
+        </div>
+
+        <div class="product-card">
+            <img src="C:\Users\aleja\OneDrive\Escritorio\registro\public\Imagenes\papafritas.jpg" alt="Producto 6">
+            <h3>Papa Fritas grande</h3>
+            <p> la mejor de mercado por tan solo  4000 pesos. envanse grande</p>
+            <button onclick="addToCart('Papa Frita grande', 4000)">Agregar al carrito</button>
+        </div>
+
+
+        <div class="product-card">
+            <img src="C:\Users\aleja\OneDrive\Escritorio\registro\public\Imagenes\salchipapas.jpg" alt="Producto 7">
+            <h3>Salchipapas Pequeño</h3>
+            <p> la mejor de mercado por tan solo  3500 pesos. envanse pequeño</p>
+            <button onclick="addToCart('Salchipapa pequeño', 3500)">Agregar al carrito</button>
+        </div>
+
+        <div class="product-card">
+            <img src="C:\Users\aleja\OneDrive\Escritorio\registro\public\Imagenes\salchipapas.jpg" alt="Producto 8">
+            <h3>Salchipapas Grande</h3>
+            <p> la mejor de mercado por tan solo  5500 pesos. envanse grande</p>
+            <button onclick="addToCart('Salchipapa grande', 5500)">Agregar al carrito</button>
+        </div>
+
+        <div class="product-card">
+            <img src="C:\Users\aleja\OneDrive\Escritorio\registro\public\Imagenes\arepas.jpg" alt="Producto 9">
+            <h3>Arepas Nomales</h3>
+            <p> la mejor de mercado por tan solo  2500 pesos. </p>
+            <button onclick="addToCart('Arepas - Normal', 2500)">Agregar al carrito</button>
+        </div>
+
+        <div class="product-card">
+            <img src="C:\Users\aleja\OneDrive\Escritorio\registro\public\Imagenes\arepas.jpg" alt="Producto 10">
+            <h3>Arepas Mixtas</h3>
+            <p> la mejor de mercado por tan solo  3500 pesos. </p>
+            <button onclick="addToCart('Arepas Mixta', 3500)">Agregar al carrito</button>
+        </div>
+        
+        <div class="product-card">
+            <img src="C:\Users\aleja\OneDrive\Escritorio\registro\public\Imagenes\salchipapas.jpg" alt="Producto 11">
+            <h3>Choripapas Pequeño</h3>
+            <p> la mejor de mercado por tan solo  4000 pesos. envanse pequeño</p>
+            <button onclick="addToCart('Choripapa normal', 4000)">Agregar al carrito</button>
+        </div>
+
+        <div class="product-card">
+            <img src="C:\Users\aleja\OneDrive\Escritorio\registro\public\Imagenes\salchipapas.jpg" alt="Producto 12">
+            <h3>Choripapas Grande</h3>
+            <p> la mejor de mercado por tan solo  6000 pesos. envanse grande</p>
+            <button onclick="addToCart('choripapa grande', 6000)">Agregar al carrito</button>
+        </div>
+          
+
+
+        <div class="product-card">
+            
+            
+            <img src="C:\Users\aleja\OneDrive\Escritorio\registro\public\Imagenes\salchipapas.jpg" alt="Producto 12">
+            <h3>Choripapas Especial</h3>
+            <p> la mejor de mercado por tan solo  8500 pesos. envanse grande</p>
+            <button onclick="addToCart('Choripapas Especial', 8500)">Agregar al carrito</button>
+        </div>
+
+        <div class="product-card">
+            <img src="C:\Users\aleja\OneDrive\Escritorio\registro\public\Imagenes\salchipapas.jpg" alt="Producto 12">
+            <h3>Salchipapa Especial</h3>
+            <p> la mejor de mercado por tan solo  7500 pesos. envanse grande</p>
+            <button onclick="addToCart('Salchipapa Especial', 7500)">Agregar al carrito</button>
+        </div>
+
+
+    </div>
+
+        
+
+     <!-- Puedes seguir agregando codigo si asi lo prefieres -->
+
+    
+
+    <!-- Modal Carrito -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <h2>Carrito</h2>
+            <div id="cartItems"></div>
+            <div class="total" id="totalAmount">Total: $0</div>
+            <button id="clearCartButton" onclick="clearCart()">Limpiar Carrito</button>
+            <div class="button-container">
+                <button onclick="sendWhatsApp()">Enviar orden a WhatsApp</button>
+                <button onclick="closeModal('cart')">Cerrar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Delivery -->
+    <div id="deliveryModal" class="modal">
+        <div class="modal-content">
+            <h2>Delivery</h2>
+            <input type="text" id="deliveryName" placeholder="Nombre" required>
+            <input type="text" id="deliveryAddress" placeholder="Dirección" required>
+            <input type="text" id="deliveryPhone" placeholder="Teléfono" required>
+            <input type="text" id="deliveryOservaciones" placeholder="Observaciones">
+            <div class="button-container">
+                <button onclick="confirmDelivery()">Confirmar Pedido</button>
+                <button onclick="closeModal('delivery')">Cerrar</button>
+            </div>
+
+
+
+        </div>
+    </div>
+
+    <!-- Modal Retira -->
+    <div id="retiraModal" class="modal">
+        <div class="modal-content">
+            <h2>Retira Cliente</h2>
+            <input type="text" id="retiraName" placeholder="Nombre" required>
+            <input type="text" id="retiraPhone" placeholder="Teléfono" required>
+            <input type="text" id="deliveryOservaciones" placeholder="Observaciones">
+            <div class="button-container">
+                <button onclick="confirmRetira()">Confirmar Pedido</button>
+                <button onclick="closeModal('retira')">Cerrar</button>
+            </div>
+        </div>
+
+        
+            </div>
+
+
+    </div>
+
+    <script>
+    function filterProducts() {
+            const input = document.getElementById("searchInput").value.toLowerCase();
+            const productCards = document.querySelectorAll(".product-card");
+
+            productCards.forEach(card => {
+                const title = card.querySelector("h3").textContent.toLowerCase();
+                if (title.includes(input)) {
+                    card.style.display = "block";
+                } else {
+                    card.style.display = "none";
+                }
+            });
+        }
+
+
+
+
+    
+        let cart = [];
+        let customerInfo = {};  // Para almacenar la información del cliente
+
+        function addToCart(productName, price) {
+            cart.push({ name: productName, price: price });
+            updateCartDisplay();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            const cartList = document.getElementById('cartItems');
+            const cartCount = document.getElementById('cartCount');
+            const totalAmount = document.getElementById('totalAmount');
+            const viewCartButton = document.getElementById('viewCartButton');
+            
+            cartList.innerHTML = '';
+            cart.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.classList.add('cart-item');
+                div.innerHTML = `  
+                    <span>${item.name}</span> 
+                    <button onclick="removeFromCart(${index})">Eliminar</button> 
+                `;
+                cartList.appendChild(div);
+            });
+
+            cartCount.textContent = cart.length;  // Actualiza el contador de productos
+            const total = cart.reduce((sum, item) => sum + item.price, 0);  // Sumar los precios de los productos
+            totalAmount.textContent = `Total: $${total}`;
+            viewCartButton.innerHTML = `Ver Carrito (<span id="cartCount">${cart.length}</span>)`;  // Actualiza el contador dentro del botón
+        }
+
+        function clearCart() {
+            cart = [];
+            updateCartDisplay();
+            closeModal('cart');
+        }
+
+        function showModal(modalId) {
+            document.getElementById(modalId + 'Modal').style.display = 'flex';
+            showLoading();  // Mostrar el loading al abrir un modal
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId + 'Modal').style.display = 'none';
+            hideLoading();  // Ocultar el loading al cerrar el modal
+        }
+
+        function showLoading() {
+            document.getElementById('loading').style.display = 'flex';
+            setTimeout(hideLoading, 1500);  // Esperar 1,5 segundos y luego ocultar el loading
+        }
+
+        function hideLoading() {
+            document.getElementById('loading').style.display = 'none';
+        }
+
+        function confirmDelivery() {
+            // Recoger la información del cliente para delivery
+            customerInfo = {
+                name: document.getElementById('deliveryName').value,
+                address: document.getElementById('deliveryAddress').value,
+                phone: document.getElementById('deliveryPhone').value,
+                observaciones:document.getElementById('deliveryOservaciones').value
+            };
+            alert('Orden Confirmada Delivery favor confirmar Numero de tranferencia');
+            closeModal('delivery');
+        }
+
+        function confirmRetira() {
+            // Recoger la información del cliente para retiro
+            customerInfo = {
+                name: document.getElementById('retiraName').value,
+                phone: document.getElementById('retiraPhone').value,
+                observaciones:document.getElementById('deliveryOservaciones').value
+            };
+            alert('Orden de Pedido:');
+            closeModal('retira');
+        }
+
+        function sendWhatsApp() {
+            // Crear el mensaje para WhatsApp
+            let message = "Pedido desde el carrito:\n\n";
+            cart.forEach(item => {
+                message += `${item.name} - $${item.price}\n`;
+            });
+
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            message += `\nTotal: $${total}\n\n`;
+
+            // Añadir los datos del cliente al mensaje
+            if (customerInfo.name) {
+                message += `Nombre: ${customerInfo.name}\n`;
+            }
+            if (customerInfo.address) {
+                message += `Dirección: ${customerInfo.address}\n`;
+            }
+            if (customerInfo.phone) {
+                message += `Teléfono: ${customerInfo.phone}\n`;
+            }
+            if (customerInfo.phone) {
+                message += `Observaciones: ${customerInfo.observaciones}\n`;
+            }
+
+            // Codificar el mensaje para la URL de WhatsApp
+            const encodedMessage = encodeURIComponent(message);
+            const phoneNumber = "56974442231"; // Aquí puedes colocar el número de teléfono para recibir el pedido en WhatsApp
+            const url = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
+            // Abrir WhatsApp
+            window.open(url, '_blank');
+        }
+
+        function viewCart() {
+            showModal('cart');
+        }
+    </script>
+</body>
+</html>
