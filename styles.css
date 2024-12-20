@@ -1,0 +1,420 @@
+        /* Reset general */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+       
+       
+       
+       
+       
+        /* Estilos del cuerpo */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f6f9;
+            display: flex;
+            height: 100vh;
+        }
+
+         /* Barra de búsqueda */
+         .search-bar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0px;
+            background-color: #0c0c0c;
+            height: 100px;
+            width: 100%;
+            margin-left: 5px;
+        }
+
+        .search-input {
+            width: 95%;
+            padding: 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            height: 40%;
+            margin-top: 0px;
+            margin-left:10px;
+            left:40px;
+        }
+
+        .search-button {
+            background-color: #2980b9;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 100px;
+            transition: background-color 0.3s ease;
+            width: 20px;
+            margin-right: 140px;
+            
+        }
+
+        .webpay-button {
+           
+            margin-top: 0px;
+            
+            
+        }
+
+
+
+        .search-button:hover {
+            background-color: #050505;
+            margin-left: 40px;
+            padding: auto;
+        }
+        
+        
+        /* Sidebar - Menú lateral */
+        .sidebar {
+            width: 300px;
+            height: 1000vh;
+            background-color: #0a0a0a;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .sidebar h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+
+/* Estilos del logo */
+        .sidebar-logo {
+         width: 80%;  /* Ajusta el tamaño del logo */
+         max-width: 120px;  /* Tamaño máximo */
+         margin: 0 auto 20px auto;  /* Centrado y separación inferior */
+         display: block;
+       }
+
+
+        /* Contenedor de los botones */
+        .form-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        /* Estilos de los botones */
+        .button {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .button:hover {
+            background-color: #2980b9;
+
+        }
+
+        .button:active {
+            transform: scale(0.98);
+        }
+
+        .button-container {
+            display: flex;
+            gap: 15px;
+            justify-content: space-between;
+        }
+
+        /* Sección de productos */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+            width: 100%;
+            flex-grow: 1;
+        }
+
+        .product-card {
+    width: 230px;
+    border: 1px solid #ddd;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    background-color: #131212;;
+    margin-top: 10px;
+    height: 57%;
+        }
+
+        .product-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            color: #cedff0;
+            margin-bottom: 10px;
+        }
+
+        .product-card p {
+            font-size: 14px;
+            color: #f5fafa;
+            margin-bottom: 15px;
+        }
+
+        .product-card button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            width: 100%;
+            height: 15%;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 18px;
+            margin-top: 0px;
+        }
+
+        .product-card button:hover {
+            background-color: #2980b9;
+        }
+
+        
+        .options {
+    margin: 15px 0;
+    text-align: left;
+}
+
+.options label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1rem;
+    color: #333;
+}
+
+.quantity {
+    margin-bottom: 15px;
+}
+
+.quantity label {
+    font-size: 1rem;
+    color: #333;
+}
+
+.quantity input {
+    width: 50px;
+    padding: 5px;
+    margin-left: 10px;
+    font-size: 1rem;
+}
+
+        
+
+
+
+            /* Media Queries */
+             /* Media Queries */
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+                height: auto;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                box-shadow: none;
+                margin-bottom: 20px;
+            }
+
+            .search-input {
+                width: 87%;
+            }
+
+            .products {
+                width: 100%;
+            }
+
+            .product-card {
+                width: 100%;
+                max-width: 300px;
+                margin-bottom: 20px;
+            }
+
+            .search-bar {
+                flex-direction: column;
+                align-items: stretch;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .product-card {
+                width: 100%;
+                max-width: 220px;
+            }
+
+            .sidebar h2 {
+                font-size: 20px;
+            }
+
+            .button {
+                font-size: 14px;
+                padding: 12px;
+            }
+
+            .form-buttons {
+                gap: 10px;
+            }
+        }
+
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 400px;
+            max-height: 80vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .modal-content h2 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .modal-content input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        /* Ajuste para eliminar el total en el carrito */
+        .total {
+            display: none;
+            font-size: 24px ;
+        }
+
+
+
+
+
+
+        /* Estilo de los botones dentro de los formularios */
+        .modal-content button {
+            background-color: #3498db;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            width: 40%; /* Botones con un ancho del 40% */
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            margin-bottom: 15px;
+            height: 50px; /* Para igualar la altura de los botones */
+        }
+
+        .modal-content button:hover {
+            background-color: #2980b9;
+        }
+
+        .modal-content button:active {
+            transform: scale(0.98);
+        }
+
+        /* Centrado de los botones */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            width: 100%;
+        }
+
+        /* Ajustar espacio entre botones */
+        .modal-content button#clearCartButton {
+            width: 40%;  /* Ancho 40% */
+            margin: 20px 0;  /* Margen para separarlo de otros elementos */
+        }
+
+        /* Estilos para el loading */
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .loading-spinner {
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            width: 300px;
+            height: 300px;
+            animation: spin 2s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
