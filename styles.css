@@ -418,3 +418,24 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+
+        .whatsapp-logo {
+            background-color: #0c0c0c; /* Verde de WhatsApp */
+            color: white;
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .whatsapp-logo img {
+            width: 30px; /* Tamaño del ícono de WhatsApp */
+            margin-right: 10px;
+        }
+
+        .whatsapp-logo h3 {
+            margin: 0;
+            font-size: 20px;
+        }
